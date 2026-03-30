@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gleichungen Lösen - 8. Klasse</title>
+    <link rel="stylesheet" href="katex.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container" id="app-container">
+        <div id="help-btn" title="Hilfe zur Steuerung">i</div>
+        <div id="help-modal" class="hidden">
+            <h3>Steuerung & Hilfe</h3>
+            <p><strong>Eingabe:</strong><br>Verwende <b>+</b>, <b>-</b>, <b>*</b> (Mal), <b>:</b> (Geteilt).<br>Beispiele: <code>+3</code>, <code>-2x</code>, <code>:4</code>.<br>
+            <button id="close-help">Schließen</button>
+        </div>
+
+        <div id="login-screen">
+            <h2>Willkommen!</h2>
+            <p>Bitte gib deinen Namen ein:</p>
+            <input type="text" id="student-name" placeholder="Dein Name...">
+            <button id="start-btn">Starten</button>
+        </div>
+
+        <div id="main-screen" class="hidden">
+            <h2 id="task-description">Löse die Gleichung</h2>
+
+            <div id="solution-display" class="hidden"></div>
+
+            <div id="history-container">
+                </div>
+
+            <div id="active-row" class="row">
+                <div id="current-equation" class="equation-display"></div>
+                <div class="input-area">
+                    <span class="operator-bar">|</span>
+                    <input type="text" id="operation-input" placeholder="z.B. -3x" autocomplete="off">
+                </div>
+            </div>
+
+            <div id="error-message" class="error hidden">Fehlertext</div>
+
+            <div id="controls" class="hidden">
+                <div class="success-message">✔️ Super, du hast es geschafft!</div>
+                <button id="next-task-btn">Nächste Aufgabe</button>
+                <button id="submit-btn">Ergebnisse Senden</button>
+                <div id="task-counter" class="hidden"></div>
+            </div>
+
+            <button id="show-solution-btn">Lösung anzeigen</button>
+
+            <hr style="margin-top: 40px; border: 0; border-top: 1px solid #ddd;">
+
+            <div id="custom-task-container" style="text-align: center; margin-top: 20px;">
+                <button id="show-custom-btn" style="background: #2196F3; font-size: 14px;">✏️ Eigene Gleichung eingeben</button>
+                <div id="custom-input-area" class="hidden" style="margin-top: 10px; background: #e3f2fd; padding: 10px; border-radius: 6px;">
+                    <input type="text" id="custom-eq-input" placeholder="z.B. 2x+3=7-9x" style="width: 60%; font-size: 16px;">
+                    <button id="start-custom-btn" style="font-size: 14px;">Los!</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="teacher-modal" class="hidden">
+        <h3>👨‍🏫 Lehrer-Modus</h3>
+        <textarea id="teacher-data" placeholder="Füge hier die Daten aus der Tabelle/E-Mail ein..."></textarea>
+        <button id="load-teacher-data">Laden</button>
+        <button id="close-teacher">Abbrechen</button>
+    </div>
+
+    <script src="js/katex.min.js"></script>
+    <script src="js/Fraction.js"></script>
+    <script src="js/Equation.js"></script>
+    <script src="js/UI.js"></script>
+    <script src="js/App.js"></script>
+</body>
+</html>
